@@ -1,0 +1,237 @@
+.admin-layout {
+  display: flex;
+  min-height: 100vh;
+  background-color: var(--light-gray);
+}
+
+.admin-sidebar {
+  width: 280px;
+  background: var(--luxury-gradient);
+  color: var(--white);
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 100;
+  transition: var(--transition);
+  box-shadow: var(--luxury-shadow);
+  transform: translateX(-100%);
+}
+
+.admin-sidebar.open {
+  transform: translateX(0);
+}
+
+.admin-sidebar-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.close-admin-sidebar {
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.refresh-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+@media (max-width: 500px) {
+  .refresh-btn {
+    font-size: 1.5rem;
+  }
+}
+
+.admin-logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.admin-nav {
+  flex: 1;
+  padding: 1.5rem 0;
+  overflow-y: auto;
+}
+
+.admin-nav-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.admin-nav-item {
+  margin-bottom: 0.5rem;
+}
+
+.admin-nav-link {
+  display: flex;
+  align-items: center;
+  padding: 0.75rem 1.5rem;
+  color: rgba(255, 255, 255, 0.8);
+  transition: var(--transition);
+  border-left: 3px solid transparent;
+}
+
+.admin-nav-link:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: var(--white);
+}
+
+.admin-nav-link.active {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: var(--gold);
+  border-left: 3px solid var(--gold);
+}
+
+.admin-nav-icon {
+  font-size: 1.25rem;
+  margin-right: 1rem;
+  display: flex;
+  align-items: center;
+}
+
+.admin-sidebar-footer {
+  padding: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.admin-user {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.admin-user-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  color: var(--gold);
+  background-color: rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 0.75rem;
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+
+.admin-user-avatar img {
+  height: 100%;
+  width: 100%;
+}
+
+.admin-user-name {
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.admin-user-role {
+  font-size: 0.75rem;
+  opacity: 0.7;
+}
+
+.admin-footer-actions {
+  display: flex;
+  justify-content: space-between;
+}
+
+.admin-footer-btn {
+  display: flex;
+  align-items: center;
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.85rem;
+  padding: 0.5rem;
+  border-radius: 4px;
+  transition: var(--transition);
+}
+
+.admin-footer-btn:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: var(--white);
+}
+
+.admin-footer-btn svg {
+  margin-right: 0.5rem;
+}
+
+.admin-main {
+  flex: 1;
+  padding: 2rem;
+  transition: var(--transition);
+  overflow-x: scroll;
+  margin-left: 0;
+  padding-top: 80px;
+}
+
+::-webkit-scrollbar {
+  height: 0.5rem;
+}
+
+.admin-mobile-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background-color: var(--navy-blue);
+  color: var(--white);
+  padding: 0 1rem;
+  z-index: 99;
+  align-items: center;
+  box-shadow: var(--box-shadow);
+  display: flex;
+  justify-content: space-between;
+}
+
+.admin-menu-toggle {
+  background: none;
+  border: none;
+  color: var(--white);
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.admin-mobile-title {
+  margin-left: 1rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.admin-sidebar-overlay {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 90;
+}
+
+.refreshing {
+  animation: rotate 1s linear infinite;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

@@ -1,0 +1,344 @@
+.gridOrList-products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.gridOrList-products-grid.list-view {
+  grid-template-columns: 1fr;
+}
+
+.gridOrList-product-card {
+  background-color: var(--white);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  transition: var(--transition);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.list-view .gridOrList-product-card {
+  flex-direction: row;
+}
+
+.gridOrList-product-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.gridOrList-product-image {
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.collectionOrShop-image-wrapper {
+  height: 100%;
+  width: 100%;
+}
+
+.list-view .gridOrList-product-image {
+  width: 200px;
+}
+
+#collectionOrShop-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover !important;
+  transition: transform 0.5s ease;
+}
+
+.gridOrList-product-card:hover #collectionOrShop-image {
+  transform: scale(1.1);
+}
+
+.gridOrList-discount-badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: var(--gold-gradient);
+  color: var(--white);
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.gridOrList-rating-badge {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background-color: rgba(255, 255, 255, 0.9);
+  color: var(--navy-blue);
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.gridOrList-rating-badge span {
+  color: var(--gold);
+}
+
+.collection-card-image-out-of-stock-badge {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  background-color: rgba(229, 62, 62, 0.2);
+  color: #e53e3e;
+  padding: 5px 10px;
+  border: 1.5px solid #e53e3e;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.collection-card-image-new-badge {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  border: 1.5px solid;
+  background-color: #faf3e0;
+  color: #1a237e;
+  border-color: #e6c200;
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.gridOrList-product-info {
+  padding: 20px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.gridOrList-product-name {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--navy-blue);
+  margin-bottom: 0;
+  height: 48px;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+}
+
+.list-view .gridOrList-product-name {
+  height: auto;
+  margin-bottom: 0;
+}
+
+.gridOrList-product-price {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.gridOrList-current-price {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--navy-blue);
+}
+
+.gridOrList-original-price {
+  font-size: 0.9rem;
+  color: var(--dark-gray);
+  text-decoration: line-through;
+}
+
+.gridOrList-review-count {
+  font-size: 0.8rem;
+  color: var(--dark-gray);
+  margin-bottom: 15px;
+}
+
+.gridOrList-product-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: auto;
+}
+
+.gridOrList-view-product-btn {
+  flex: 1;
+  padding: 10px 0;
+  font-size: 0.9rem;
+  text-align: center;
+  text-decoration: none;
+}
+
+.gridOrList-add-to-cart-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: var(--navy-blue);
+  color: var(--white);
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition);
+  cursor: pointer;
+}
+
+.gridOrList-add-to-cart-btn.in-cart {
+  background-color: var(--gold);
+}
+
+.gridOrList-add-to-cart-btn:hover {
+  background-color: var(--gold);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(184, 134, 11, 0.3);
+}
+
+@media (max-width: 650px) {
+  .gridOrList-products-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 321px) and (max-width: 650px) {
+  .gridOrList-products-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 505px) {
+  .gridOrList-product-image {
+    height: 180px;
+  }
+
+  .gridOrList-product-name {
+    font-size: 0.9rem;
+    height: 42px;
+  }
+  .gridOrList-current-price {
+    font-size: 1rem;
+  }
+
+  .gridOrList-product-actions {
+    flex-direction: column;
+  }
+
+  .gridOrList-add-to-cart-btn {
+    display: none;
+  }
+}
+
+@media (max-width: 430px) {
+  .gridOrList-products-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+  .gridOrList-product-card {
+    border-radius: 6px;
+  }
+  .favorite-btn {
+    width: 28px;
+    height: 28px;
+    font-size: 0.8rem;
+  }
+  .gridOrList-discount-badge,
+  .gridOrList-rating-badge {
+    font-size: 0.7rem;
+    padding: 3px 6px;
+  }
+  .gridOrList-product-image {
+    height: 140px;
+  }
+
+  .collection-card-image-out-of-stock-badge {
+    font-size: 0.6rem;
+    padding: 3px 6px;
+  }
+
+  .collection-card-image-new-badge {
+    padding: 3px 6px;
+    font-size: 0.6rem;
+  }
+
+  .gridOrList-product-info {
+    padding: 10px;
+  }
+
+  .gridOrList-product-name {
+    font-size: 0.8rem;
+    height: 38px;
+    /* margin-bottom: 5px; */
+  }
+
+  .gridOrList-product-price {
+    gap: 5px;
+    margin-bottom: 5px;
+  }
+
+  .gridOrList-current-price {
+    font-size: 0.9rem;
+  }
+
+  .gridOrList-original-price {
+    font-size: 0.7rem;
+  }
+
+  .gridOrList-review-count {
+    font-size: 0.7rem;
+    margin-bottom: 8px;
+  }
+
+  .gridOrList-product-actions {
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .gridOrList-view-product-btn {
+    font-size: 0.8rem;
+    padding: 8px 8px !important;
+  }
+}
+
+@media (max-width: 370px) {
+  .gridOrList-product-image {
+    max-width: 10rem !important;
+  }
+}
+
+@media (max-width: 330px) {
+  .gridOrList-product-image {
+    max-width: 8.5rem !important;
+  }
+
+  .gridOrList-products-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5px;
+  }
+  .gridOrList-product-name {
+    font-size: 0.75rem;
+    height: 36px;
+  }
+
+  .gridOrList-product-price {
+    margin-bottom: 5px;
+  }
+
+  .gridOrList-current-price {
+    font-size: 0.8rem;
+  }
+
+  .gridOrList-original-price {
+    font-size: 0.65rem;
+  }
+
+  .gridOrList-review-count {
+    font-size: 0.65rem;
+    margin-bottom: 5px;
+  }
+}

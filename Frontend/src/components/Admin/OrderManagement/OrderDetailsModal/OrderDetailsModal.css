@@ -1,0 +1,253 @@
+.order-details-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.h100 {
+  height: 100% !important;
+}
+
+.order-details-modal {
+  background-color: var(--white);
+  border-radius: 8px;
+  box-shadow: var(--luxury-shadow);
+  width: 90%;
+  /* min-width: 1000px; */
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  animation: fadeIn 0.3s ease-out;
+}
+
+.order-details-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem;
+  border-bottom: 1px solid var(--gray);
+}
+
+.order-details-header h3 {
+  font-size: 1.25rem;
+  color: var(--navy-blue);
+  margin: 0;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 1.25rem;
+  color: var(--dark-gray);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.25rem;
+  border-radius: 4px;
+  transition: var(--transition);
+}
+
+.close-btn:hover {
+  background-color: var(--light-gray);
+  color: var(--navy-blue);
+}
+
+.order-details-content {
+  padding: 1.5rem;
+  overflow-y: auto;
+  /* overflow-x: hidden; */
+  flex: 1;
+}
+
+.scroll {
+  overflow-x: auto;
+}
+
+.order-details-section {
+  margin-bottom: 1.5rem;
+}
+
+.order-details-section h4 {
+  font-size: 1rem;
+  color: var(--navy-blue);
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--gray);
+}
+
+.admin-customer-details,
+.admin-address-details,
+.admin-order-summary {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.admin-customer-details p,
+.admin-address-details p,
+.admin-order-summary p {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.payment-status {
+  display: inline-block;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.payment-status.paid {
+  background-color: rgba(72, 187, 120, 0.1);
+  color: #48bb78;
+}
+
+.payment-status.pending {
+  background-color: rgba(246, 173, 85, 0.1);
+  color: #f6ad55;
+}
+
+.payment-status.refunded {
+  background-color: rgba(229, 62, 62, 0.1);
+  color: #e53e3e;
+}
+
+.order-items-table {
+  min-width: 800px;
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+  /* overflow-x: scroll; */
+}
+
+.order-items-table th {
+  background-color: var(--light-gray);
+  color: var(--navy-blue);
+  font-weight: 600;
+  text-align: left;
+  padding: 0.75rem;
+}
+
+.order-items-table td {
+  padding: 0.75rem;
+  border-bottom: 1px solid var(--gray);
+}
+
+.order-total-label {
+  text-align: right;
+  font-weight: 600;
+  color: var(--navy-blue);
+}
+
+.order-total-value {
+  font-weight: 600;
+  color: var(--navy-blue);
+}
+
+.status-update-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.status-update-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem;
+  border: 1px solid var(--gray);
+  border-radius: 4px;
+  background-color: var(--white);
+  color: var(--navy-blue);
+  transition: var(--transition);
+  min-width: 100px;
+  gap: 0.5rem;
+}
+
+.status-update-btn svg {
+  font-size: 1.25rem;
+}
+
+.status-update-btn:hover {
+  background-color: var(--light-gray);
+}
+
+.status-update-btn.active {
+  background-color: var(--navy-blue);
+  color: var(--white);
+  border-color: var(--navy-blue);
+}
+
+.status-update-btn.cancel-btn.active {
+  background-color: #e53e3e;
+  border-color: #e53e3e;
+}
+
+.order-details-footer {
+  padding: 1rem 1.5rem;
+  border-top: 1px solid var(--gray);
+  display: flex;
+  justify-content: flex-end;
+}
+
+.close-details-btn {
+  padding: 0.75rem 1.5rem;
+  background-color: var(--light-gray);
+  border: none;
+  border-radius: 4px;
+  color: var(--navy-blue);
+  font-weight: 500;
+  transition: var(--transition);
+}
+
+.close-details-btn:hover {
+  background-color: var(--gray);
+}
+
+@media (max-width: 768px) {
+  .order-details-content {
+    padding: 1rem;
+  }
+
+  .status-update-options {
+    justify-content: center;
+  }
+
+  .status-update-btn {
+    min-width: 80px;
+    padding: 0.5rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .order-details-header,
+  .order-details-footer {
+    padding: 1rem;
+  }
+
+  .order-items-table {
+    font-size: 0.8rem;
+  }
+
+  .order-items-table th,
+  .order-items-table td {
+    padding: 0.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .status-update-btn {
+    min-width: 70px;
+    font-size: 0.8rem;
+  }
+}

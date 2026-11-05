@@ -1,0 +1,199 @@
+.coupon-management {
+  background-color: var(--white);
+  border-radius: 8px;
+  box-shadow: var(--box-shadow);
+  padding: 1.5rem;
+  min-width: 650px;
+}
+
+.coupon-management-header {
+  margin-bottom: 1.5rem;
+}
+
+.coupon-count {
+  color: var(--dark-gray);
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+}
+
+.coupon-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  gap: 1rem;
+}
+
+.search-container {
+  position: relative;
+  flex: 1;
+  min-width: 200px;
+}
+
+.coupon-action-buttons {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.add-coupon-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  background: var(--gold-gradient);
+  border: none;
+  border-radius: 4px;
+  color: var(--navy-blue);
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: var(--transition);
+}
+
+.add-coupon-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(184, 134, 11, 0.3);
+}
+
+.coupon-table-container {
+  overflow-x: auto;
+  margin-bottom: 1.5rem;
+}
+
+.coupon-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+  min-width: 1000px;
+}
+
+.coupon-table th {
+  background-color: var(--light-gray);
+  color: var(--navy-blue);
+  font-weight: 600;
+  text-align: left;
+  padding: 1rem;
+  position: relative;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.coupon-table th:hover {
+  background-color: var(--gray);
+}
+
+.coupon-table td {
+  padding: 1rem;
+  border-bottom: 1px solid var(--gray);
+  vertical-align: middle;
+}
+
+.coupon-code {
+  font-weight: 600;
+  color: var(--navy-blue);
+  background-color: var(--light-gray);
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-family: monospace;
+  letter-spacing: 0.5px;
+}
+
+.status-badge {
+  display: inline-block;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.status-badge.active {
+  background-color: rgba(72, 187, 120, 0.1);
+  color: #48bb78;
+}
+
+.status-badge.expired {
+  background-color: rgba(229, 62, 62, 0.1);
+  color: #e53e3e;
+}
+
+.status-badge.scheduled {
+  background-color: rgba(66, 153, 225, 0.1);
+  color: #4299e1;
+}
+
+.usage-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.usage-text {
+  font-size: 0.8rem;
+  color: var(--dark-gray);
+}
+
+.usage-bar {
+  height: 4px;
+  background-color: var(--gray);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.usage-progress {
+  height: 100%;
+  background: var(--gold-gradient);
+  border-radius: 2px;
+}
+
+.coupon-table-action-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.action-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background-color: var(--light-gray);
+  color: var(--navy-blue);
+  transition: var(--transition);
+}
+
+.action-btn:hover {
+  transform: translateY(-2px);
+}
+
+.coupon-table-edit-btn,
+.coupon-table-delete-btn {
+  background: none;
+  border: none;
+  padding: 0.25rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.coupon-table-edit-btn {
+  color: #d69e2e;
+}
+
+.coupon-table-edit-btn:hover {
+  background-color: rgba(214, 158, 46, 0.1);
+}
+
+.coupon-table-delete-btn {
+  color: #e53e3e;
+}
+
+.coupon-table-delete-btn:hover {
+  background-color: rgba(229, 62, 62, 0.1);
+}
+
+.no-coupons {
+  text-align: center;
+  padding: 2rem;
+  color: var(--dark-gray);
+}

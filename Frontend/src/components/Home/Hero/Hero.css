@@ -1,0 +1,376 @@
+.hero {
+  position: relative;
+  border-radius: 0;
+  margin-bottom: 30px;
+  padding: 0;
+  box-shadow: var(--luxury-shadow);
+  overflow: hidden;
+  height: 500px;
+}
+
+.hero-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--navy-blue);
+  transition: background-color 0.8s ease;
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  padding: 40px;
+}
+
+.hero-text {
+  flex: 1;
+  padding-right: 20px;
+  color: var(--white);
+  max-width: 50%;
+  animation: fadeInLeft 0.8s ease-out;
+}
+
+.hero-tag {
+  display: inline-block;
+  font-size: 0.9rem;
+  color: var(--gold);
+  margin-bottom: 15px;
+  padding: 5px 10px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  font-weight: 500;
+}
+
+.hero-title {
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 15px;
+  line-height: 1.2;
+  font-family: Outfit !important;
+  letter-spacing: 1px;
+}
+
+.hero-subtitle {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--gold);
+  margin-bottom: 20px;
+  font-family: Outfit !important;
+}
+
+.hero-description {
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 15px;
+}
+
+.shop-now-btn {
+  padding: 12px 25px;
+  font-size: 1rem;
+  border: 2px solid var(--gold) !important;
+  &:hover {
+    color: var(--gold);
+  }
+}
+
+.view-collection-btn {
+  background: transparent;
+  color: var(--white);
+  border: 2px solid var(--gold);
+  padding: 10px 20px;
+  border-radius: 4px;
+  font-weight: 500;
+  transition: var(--transition);
+  font-size: 1rem;
+}
+
+.view-collection-btn:hover {
+  background-color: rgba(212, 175, 55, 0.2);
+  transform: translateY(-2px);
+}
+
+.hero-image-container {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  position: relative;
+  height: 100%;
+  max-width: 50%;
+}
+
+.hero-image {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slide-image {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  transition: transform 0.5s ease;
+  animation: fadeInRight 0.8s ease-out;
+}
+
+.hero-image.animating .slide-image {
+  animation: fadeInRight 0.8s ease-out;
+}
+
+.hero-controls {
+  position: absolute;
+  bottom: 20px;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  z-index: 3;
+}
+
+.hero-arrow {
+  background-color: rgba(255, 255, 255, 0.2);
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
+  transition: var(--transition);
+  cursor: pointer;
+}
+
+.hero-arrow:hover {
+  background-color: var(--gold);
+  transform: scale(1.1);
+}
+
+.hero-dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.5);
+  border: none;
+  transition: var(--transition);
+  cursor: pointer;
+}
+
+.dot.active {
+  background-color: var(--gold);
+  transform: scale(1.2);
+}
+
+.loader {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: 500px;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* background: #000; */
+  /* border: 1px solid #d3d3d3; */
+  padding: 15px;
+  /* background-color: #e3e3e3; */
+  overflow: hidden;
+}
+
+.loader:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: linear-gradient(
+    110deg,
+    rgba(227, 227, 227, 0) 0%,
+    rgba(227, 227, 227, 0) 40%,
+    rgb(10, 31, 68),
+    rgba(227, 227, 227, 0) 60%,
+    rgba(227, 227, 227, 0) 100%
+  );
+  animation: gradient-animation_2 1.5s linear infinite;
+}
+
+.loader .wrapper {
+  /* width: 100%;
+  height: 100%; */
+  position: relative;
+  transform: translate(-50px, -50px);
+}
+
+.loader .wrapper > div {
+  background-color: #cacaca;
+}
+
+@media (max-width: 992px) {
+}
+
+.loader .circle {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.loader .button {
+  display: inline-block;
+  height: 32px;
+  width: 75px;
+}
+
+.loader .line-1 {
+  position: absolute;
+  top: 11px;
+  left: 58px;
+  height: 10px;
+  width: 150px;
+}
+
+.loader .line-2 {
+  position: absolute;
+  top: 34px;
+  left: 58px;
+  height: 10px;
+  width: 150px;
+}
+
+.loader .line-3 {
+  position: absolute;
+  top: 57px;
+  left: 0px;
+  height: 10px;
+  width: 208px;
+}
+
+.loader .line-4 {
+  position: absolute;
+  top: 80px;
+  left: 0px;
+  height: 10px;
+  width: 208px;
+}
+
+@keyframes gradient-animation_2 {
+  0% {
+    transform: translateX(-100%);
+  }
+
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@media (max-width: 992px) {
+  .loader {
+    height: 400px;
+  }
+
+  .loader .wrapper {
+    transform: translate(-75px, -20px);
+  }
+
+  .hero {
+    height: auto;
+  }
+
+  .hero-content {
+    flex-direction: column;
+    padding: 30px;
+  }
+
+  .hero-image {
+    margin-bottom: 1rem;
+  }
+
+  .hero-text,
+  .hero-image-container {
+    max-width: 100%;
+    padding-right: 0;
+    margin-bottom: 30px;
+  }
+
+  .hero-title {
+    font-size: 2.5rem;
+  }
+
+  .hero-subtitle {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.5rem;
+  }
+
+  .hero-description {
+    font-size: 1rem;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+  }
+
+  .shop-now-btn,
+  .view-collection-btn {
+    width: 100%;
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}

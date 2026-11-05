@@ -1,0 +1,154 @@
+.coupons-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.coupons-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.coupons-title-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.coupons-icon {
+  font-size: 2rem;
+  color: var(--navy-blue);
+}
+
+.coupons-title {
+  font-size: 2.2rem;
+  color: var(--navy-blue);
+  margin: 0;
+  font-weight: 700;
+}
+
+.coupons-subtitle {
+  font-size: 1rem;
+  color: #666;
+  margin: 0;
+}
+
+.empty-coupons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
+  color: #666;
+  font-size: 1.1rem;
+}
+
+.coupons-list {
+  display: grid;
+  gap: 16px;
+}
+
+.coupon-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 24px;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+}
+
+.coupon-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1;
+}
+
+.coupon-code {
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: var(--navy-blue);
+  font-family: monospace;
+}
+
+.coupon-type {
+  font-size: 1rem;
+  color: #2e7d32;
+  font-weight: 600;
+}
+
+.coupon-min {
+  font-size: 0.85rem;
+  color: #666;
+}
+
+.coupon-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.copy-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  background: var(--navy-blue);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.copy-btn:hover {
+  background: #1e3a5f;
+}
+
+.copy-btn svg {
+  font-size: 1rem;
+}
+
+.coupons-note {
+  margin-top: 40px;
+  padding: 20px;
+  background: #f8fafc;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.coupons-note p {
+  margin: 0;
+  color: #333;
+}
+
+.coupons-note a {
+  color: var(--navy-blue);
+  text-decoration: underline;
+  font-weight: 500;
+}
+
+@media (max-width: 600px) {
+  .coupons-container {
+    padding: 20px 16px;
+  }
+  .coupon-card {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+  }
+  .coupon-actions {
+    width: 100%;
+    justify-content: flex-end;
+  }
+  .copy-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}

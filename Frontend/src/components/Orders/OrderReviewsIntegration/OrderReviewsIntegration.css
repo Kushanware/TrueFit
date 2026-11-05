@@ -1,0 +1,88 @@
+/* Order Reviews Integration Styles */
+.order-reviews-section {
+  background-color: var(--white);
+  border-radius: var(--border-radius);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-md);
+  margin-bottom: 2rem;
+}
+
+.order-reviews-header {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.5rem;
+}
+
+.order-reviews-header h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--navy-blue);
+  margin: 0 0 0.5rem;
+  position: relative;
+  display: inline-block;
+}
+
+.order-reviews-header h3::after {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 30px;
+  height: 2px;
+  background: linear-gradient(135deg, var(--gold), var(--rich-gold));
+  border-radius: 2px;
+}
+
+.order-reviews-header p {
+  color: var(--dark-gray);
+  margin: 0.75rem 0 1rem;
+}
+
+.toggle-reviews-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  background: linear-gradient(135deg, var(--gold), var(--rich-gold));
+  color: var(--white);
+  border: none;
+  border-radius: var(--border-radius);
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  align-self: flex-start;
+}
+
+.toggle-reviews-button:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.order-reviews-items {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Responsive styles */
+@media (max-width: 576px) {
+  .order-reviews-section {
+    padding: 1.25rem;
+  }
+
+  .toggle-reviews-button {
+    width: 100%;
+    align-self: stretch;
+  }
+}

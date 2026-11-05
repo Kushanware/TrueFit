@@ -1,0 +1,29 @@
+.cart-header {
+  margin-bottom: 0 !important;
+  /* border-bottom: 1px solid var(--gray); */
+}
+
+.cart-title {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+  color: var(--navy-blue);
+  position: relative;
+  display: inline-block;
+}
+
+.cart-title::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 50px;
+  height: 3px;
+  background: var(--gold-gradient);
+}
+
+@media (max-width: 480px) {
+  .cart-title {
+    font-size: 1.5rem;
+  }
+}

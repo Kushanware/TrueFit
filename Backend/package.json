@@ -7,7 +7,7 @@
     "start": "node server.js",
     "server": "nodemon server.js"
   },
-  "author": "Asim Mulla",
+  "author": "kush",
   "license": "ISC",
   "description": "",
   "dependencies": {

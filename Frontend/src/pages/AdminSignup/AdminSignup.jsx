@@ -7,7 +7,7 @@ import "../LoginSignup/LoginSignup.css";
 import { toast } from "react-toastify";
 
 const AdminSignup = () => {
-  const { token, setUser } = useContext(StoreContext);
+  const { token, setUser, user } = useContext(StoreContext);
   const [formData, setFormData] = useState({
     token: "",
     secret: "",
@@ -36,7 +36,7 @@ const AdminSignup = () => {
     }
 
     toast.promise(
-      adminSignup(token, formData).then(async (res) => {
+      adminSignup(token, formData, user?._id).then(async (res) => {
         if (res.data.success) {
           setUser(res.data.user);
           setFormData({

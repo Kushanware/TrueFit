@@ -75,8 +75,8 @@ export const updateUserProfile = (token, userData) => {
   });
 };
 
-export const adminSignup = (token, formData) => {
-  return api.post("/api/user/adminSignup", formData, { headers: { token } });
+export const adminSignup = (token, formData, userId) => {
+  return api.post("/api/user/adminSignup", { ...formData, userId }, { headers: { token } });
 };
 
 // Order requests

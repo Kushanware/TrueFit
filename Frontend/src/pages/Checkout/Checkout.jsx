@@ -165,12 +165,6 @@ const Checkout = () => {
         const script = document.createElement("script");
         script.src = "https://checkout.razorpay.com/v1/checkout.js";
         script.async = true;
-        script.onload = () => {
-          if (typeof window.Razorpay === "undefined") {
-            console.error("Razorpay SDK failed to load.");
-            return;
-          }
-        };
 
         const options = {
           key: razorpayKey,
@@ -230,8 +224,18 @@ const Checkout = () => {
           },
         };
 
-        const razor = new window.Razorpay(options);
-        razor.open();
+        script.onload = () => {
+          if (typeof window.Razorpay === "undefined") {
+            toast.error("Razorpay SDK failed to load.");
+            return;
+          }
+          const razor = new window.Razorpay(options);
+          razor.open();
+        };
+        script.onerror = () => {
+          toast.error("Failed to load Razorpay. Check your connection.");
+        };
+        document.body.appendChild(script);
       } else {
         let orderItems = [];
         productsToOrder.map((currItem) => {
